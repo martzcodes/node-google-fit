@@ -264,7 +264,6 @@ exports.getSession = function(authToken,sessionid,callback) {
 	httpsDown(options,callback);
 };
 
-////////NOTE: Does not work
 exports.deleteSession = function(authToken,sessionid,callback) {
 	var site = 'www.googleapis.com';
 	var path = '/fitness/v1/users/me/sessions/'+encodeURI(sessionid);
