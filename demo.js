@@ -4,8 +4,8 @@ var gFit = require('./index.js'),
 var authToken = config.tokens.access_token;
 
 var dataSource =  {
-  "dataStreamName": "",
-  "name": "",
+  "dataStreamName": "test",
+  "name": "test",
   "type": "derived",
   "application": {
     "detailsUrl": "http://example.com",
@@ -34,18 +34,20 @@ gFit.createDataSource(authToken,dataSource,function(status,data) {
 	console.log('status:',status);
 	console.log('data',data);
 });
+*/
 /*
 gFit.listDataSources(authToken,function(status,data) {
 	console.log('status:',status);
 	console.log('data',data);
 });
 */
-var getsource = 'derived:com.google.step_count.delta:866555810975:Example Manufacturer:ExampleTablet:1000001:';
+var getsource = 'derived:com.google.step_count.delta:866555810975:Example Manufacturer:ExampleTablet:1000001:test';
 /*
 gFit.getDataSource(authToken,getsource,function(status,data) {
 	console.log('status:',status);
 	console.log('data',data);	
 });
+*/
 /*
 var updatedDataSource = {
     "dataStreamId": getsource,
@@ -81,130 +83,48 @@ gFit.updateDataSource(authToken, getsource, updatedDataSource, function(status, 
 */
 
 var newpoints = {
-  "dataSourceId": getsource,
-  "maxEndTimeNs": 1397515179728708316,
   "minStartTimeNs": 1397513334728708316,
+  "maxEndTimeNs": 1397515179728708316,
+  "dataSourceId": getsource,
   "point": [
     {
-      "dataTypeName": "com.google.step_count.delta",
-      "endTimeNanos": 1397513365565713993,
-      "originDataSourceId": "",
       "startTimeNanos": 1397513334728708316,
-      "value": [
-        {
-          "intVal": 8
-        }
-      ]
-    },
-    {
+      "endTimeNanos": 1397515145728708316,
       "dataTypeName": "com.google.step_count.delta",
-      "endTimeNanos": 1397513675197854515,
       "originDataSourceId": "",
-      "startTimeNanos": 1397513530098955298,
       "value": [
         {
-          "intVal": 3
+          "intVal": 10,
         }
       ]
     },
     {
-      "dataTypeName": "com.google.step_count.delta",
-      "endTimeNanos": 1397513764101240710,
-      "originDataSourceId": "",
-      "startTimeNanos": 1397513817073528237,
-      "value": [
-        {
-          "intVal": 6
-        }
-      ]
-    },
-    {
-      "dataTypeName": "com.google.step_count.delta",
-      "endTimeNanos": 1397513938674093579,
-      "originDataSourceId": "",
-      "startTimeNanos": 1397514015761859752,
-      "value": [
-        {
-          "intVal": 5
-        }
-      ]
-    },
-    {
-      "dataTypeName": "com.google.step_count.delta",
-      "endTimeNanos": 1397514106400006675,
-      "originDataSourceId": "",
-      "startTimeNanos": 1397514181893785805,
-      "value": [
-        {
-          "intVal": 4
-        }
-      ]
-    },
-    {
-      "dataTypeName": "com.google.step_count.delta",
-      "endTimeNanos": 1397514304850163634,
-      "originDataSourceId": "",
-      "startTimeNanos": 1397514356883524220,
-      "value": [
-        {
-          "intVal": 16
-        }
-      ]
-    },
-    {
-      "dataTypeName": "com.google.step_count.delta",
-      "endTimeNanos": 1397514518794639297,
-      "originDataSourceId": "",
-      "startTimeNanos": 1397514526864527756,
-      "value": [
-        {
-          "intVal": 13
-        }
-      ]
-    },
-    {
-      "dataTypeName": "com.google.step_count.delta",
-      "endTimeNanos": 1397514741275742506,
-      "originDataSourceId": "",
-      "startTimeNanos": 1397514626480314270,
-      "value": [
-        {
-          "intVal": 18
-        }
-      ]
-    },
-    {
-      "dataTypeName": "com.google.step_count.delta",
-      "endTimeNanos": 1397514813435152213,
-      "originDataSourceId": "",
-      "startTimeNanos": 1397514839292833196,
-      "value": [
-        {
-          "intVal": 17
-        }
-      ]
-    },
-    {
-      "dataTypeName": "com.google.step_count.delta",
+      "startTimeNanos": 1397515149728708316,
       "endTimeNanos": 1397515179728708316,
+      "dataTypeName": "com.google.step_count.delta",
       "originDataSourceId": "",
-      "startTimeNanos": 1397515170565969137,
       "value": [
         {
-          "intVal": 11
+          "intVal": 3,
         }
       ]
     }
   ]
 };
-/*
+
 var updateset = newpoints.minStartTimeNs+'-'+newpoints.maxEndTimeNs;
+/*
 gFit.updateDataset(authToken,getsource,updateset,newpoints,function(status,data){
 	console.log('data',data);
 });
 */
 /*
 gFit.getDataset(authToken,getsource,updateset,function(status,data){
+	console.log('data',data);
+});
+*/
+/*
+gFit.deleteDataset(authToken,getsource,updateset,function(status,data){
 	console.log('data',data);
 });
 */
@@ -243,6 +163,8 @@ gFit.getSession(authToken,newsessionid,function(status,data){
 	console.log('data',data);
 });
 */
+/*
 gFit.deleteSession(authToken,newsessionid,function(status,data){
 	console.log('data',data);
 });
+*/

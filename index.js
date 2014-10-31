@@ -160,7 +160,7 @@ exports.updateDataset = function(authToken,dataSource,dataset,newpoints,callback
 	httpsUp(options,newpoints,callback);
 };
 
-exports.getDataset = function(authToken,dataSource,dataset,newpoints,callback) {
+exports.getDataset = function(authToken,dataSource,dataset,callback) {
 	var site = 'www.googleapis.com';
 	var path = '/fitness/v1/users/me/dataSources/'+encodeURI(dataSource)+'/datasets/'+encodeURI(dataset);
 
@@ -175,6 +175,26 @@ exports.getDataset = function(authToken,dataSource,dataset,newpoints,callback) {
 		path:path,
 		headers:headers,
 		method:'GET'
+	};
+	
+	httpsDown(options,callback);
+};
+
+exports.deleteDataset = function(authToken,dataSource,dataset,callback) {
+	var site = 'www.googleapis.com';
+	var path = '/fitness/v1/users/me/dataSources/'+encodeURI(dataSource)+'/datasets/'+encodeURI(dataset);
+
+	var headers = {
+		Authorization: 'Bearer '+authToken,
+		'Content-Type': 'application/json;encoding=utf-8'
+	};
+	
+	var options = {
+		hostname:site,
+		port:443,
+		path:path,
+		headers:headers,
+		method:'DELETE'
 	};
 	
 	httpsDown(options,callback);
@@ -244,9 +264,10 @@ exports.getSession = function(authToken,sessionid,callback) {
 	httpsDown(options,callback);
 };
 
+////////NOTE: Does not work
 exports.deleteSession = function(authToken,sessionid,callback) {
 	var site = 'www.googleapis.com';
-	var path = '/fitness/v1/users/me/sessions?id='+encodeURI(sessionid);
+	var path = '/fitness/v1/users/me/sessions/'+encodeURI(sessionid);
 
 	var headers = {
 		Authorization: 'Bearer '+authToken,
