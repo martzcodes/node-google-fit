@@ -1,0 +1,19 @@
+{
+  "name": "node-google-fit",
+  "version": "0.0.1",
+  "description": "nodejs google fit api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oehokie/node-google-fit.git"
+  },
+  "author": "Matt Martz",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/oehokie/node-google-fit/issues"
+  },
+  "dependencies": {}
+}
