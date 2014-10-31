@@ -90,7 +90,8 @@ exports.listDataSources = function(authToken,callback) {
 
 exports.getDataSource = function(authToken,dataSource,callback) {
 	var site = 'www.googleapis.com';
-	var path = '/fitness/v1/users/me/dataSources/'+dataSource;
+	var path = '/fitness/v1/users/me/dataSources/'+encodeURI(dataSource);
+	console.log('path',path);
 
 	var headers = {
 		Authorization: 'Bearer '+authToken,
@@ -113,7 +114,7 @@ exports.updateDataSource = function(authToken,dataSource,updatedDataSource,callb
 	    updatedDataSource = JSON.stringify(updatedDataSource);
 	}
 	var site = 'www.googleapis.com';
-	var path = '/fitness/v1/users/me/dataSources/'+data-source;
+	var path = '/fitness/v1/users/me/dataSources/'+encodeURI(dataSource);
 
 	var headers = {
 		'Content-Length': Buffer.byteLength(updatedDataSource),
@@ -138,7 +139,9 @@ exports.updateDataset = function(authToken,dataSource,dataset,newpoints,callback
 	}
 
 	var site = 'www.googleapis.com';
-	var path = '/fitness/v1/users/me/dataSources/'+data-source+'/datasets/'+dataset;
+	var path = '/fitness/v1/users/me/dataSources/'+encodeURI(dataSource)+'/datasets/'+encodeURI(dataset);
+
+	console.log('path',path);
 
 	var headers = {
 		'Content-Length': Buffer.byteLength(newpoints),
@@ -159,7 +162,7 @@ exports.updateDataset = function(authToken,dataSource,dataset,newpoints,callback
 
 exports.getDataset = function(authToken,dataSource,dataset,newpoints,callback) {
 	var site = 'www.googleapis.com';
-	var path = '/fitness/v1/users/me/dataSources/'+data-source+'/datasets/'+dataset;
+	var path = '/fitness/v1/users/me/dataSources/'+encodeURI(dataSource)+'/datasets/'+encodeURI(dataset);
 
 	var headers = {
 		Authorization: 'Bearer '+authToken,
@@ -182,7 +185,7 @@ exports.insertSession = function(authToken,sessionid,session,callback) {
 	    session = JSON.stringify(session);
 	}
 	var site = 'www.googleapis.com';
-	var path = '/fitness/v1/users/me/sessions/'+sessionid;
+	var path = '/fitness/v1/users/me/sessions/'+encodeURI(sessionid);
 
 	var headers = {
 		Authorization: 'Bearer '+authToken,
@@ -203,7 +206,7 @@ exports.insertSession = function(authToken,sessionid,session,callback) {
 
 exports.listExistingSessions = function(authToken,startDate,endDate,callback) {
 	var site = 'www.googleapis.com';
-	var path = '/fitness/v1/users/me/sessions?starttime='+start-date+'&endTime='+end-date;
+	var path = '/fitness/v1/users/me/sessions?starttime='+encodeURI(startDate)+'&endTime='+encodeURI(endDate);
 
 	var headers = {
 		Authorization: 'Bearer '+authToken,

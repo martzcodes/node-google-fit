@@ -7,9 +7,9 @@ nodejs access to google fit's REST API.
 
 ##Note:
 
-This project may be unnecessary... the Official Node.js client may have fit support.  You can find it here: https://github.com/google/google-api-nodejs-client/
+This project may be unnecessary... the Official Node.js client may have fit support.  You can find it here: https://github.com/google/google-api-nodejs-client/  HOWEVER, the OAuth Playground on google doesn't have all of the REST Calls that are in the Google Fit API page, so mine MAY have more.
 
-This package would be a little more bare-bones/customizable though, and I'm using it as a learning experience.
+This package would also be a little more bare-bones/customizable though, and I'm using it as a learning experience.
 
 ##[Getting Started](https://developers.google.com/fit/rest/v1/get-started)
 
@@ -20,10 +20,10 @@ Once you have the authorization tokens, you'll be able to submit requests via ``
 
 ##TODO
 
-* List Data Sources
-* Create a Data Source
-* Get a specific Data Source
-* Update a Data Source
+* ~~List Data Sources~~
+* ~~Create a Data Source~~
+* ~~Get a specific Data Source~~
+* ~~Update a Data Source~~
 * Create a Custom Data Type
 * Insert Data into a data type
 * Retrieve Data from a data type
