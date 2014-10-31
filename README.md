@@ -24,18 +24,14 @@ Once you have the authorization tokens, you'll be able to submit requests via ``
 * ~~Create a Data Source~~
 * ~~Get a specific Data Source~~
 * ~~Update a Data Source~~
-* Create a Custom Data Type
-* Insert Data into a data type
-* Retrieve Data from a data type
 * Retrieve Shared Data Types
 * Get a dataset
 * Add points to a dataset
 * Delete a dataset
-* Create a Session
-* Insert a Session
-* List Existing Sessions
-* Delete a Session
-* Retrieve a Session
+* ~~Create/Insert a Session~~
+* ~~List Existing Sessions~~
+* Delete a Session (not sure if possible)
+* ~~Retrieve a Session (by id)~~
 * Look into gzip and other performance tricks: [Performance](https://developers.google.com/fit/rest/v1/performance)
 * Generate [Batch Requests](https://developers.google.com/fit/rest/v1/batch)
 * Process Batch Responses

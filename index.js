@@ -223,3 +223,43 @@ exports.listExistingSessions = function(authToken,startDate,endDate,callback) {
 	
 	httpsDown(options,callback);
 };
+
+exports.getSession = function(authToken,sessionid,callback) {
+	var site = 'www.googleapis.com';
+	var path = '/fitness/v1/users/me/sessions?id='+encodeURI(sessionid);
+
+	var headers = {
+		Authorization: 'Bearer '+authToken,
+		'Content-Type': 'application/json;encoding=utf-8'
+	};
+	
+	var options = {
+		hostname:site,
+		port:443,
+		path:path,
+		headers:headers,
+		method:'GET'
+	};
+	
+	httpsDown(options,callback);
+};
+
+exports.deleteSession = function(authToken,sessionid,callback) {
+	var site = 'www.googleapis.com';
+	var path = '/fitness/v1/users/me/sessions?id='+encodeURI(sessionid);
+
+	var headers = {
+		Authorization: 'Bearer '+authToken,
+		'Content-Type': 'application/json;encoding=utf-8'
+	};
+	
+	var options = {
+		hostname:site,
+		port:443,
+		path:path,
+		headers:headers,
+		method:'DELETE'
+	};
+	
+	httpsDown(options,callback);
+};

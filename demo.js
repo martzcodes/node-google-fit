@@ -197,13 +197,52 @@ var newpoints = {
     }
   ]
 };
-
+/*
 var updateset = newpoints.minStartTimeNs+'-'+newpoints.maxEndTimeNs;
 gFit.updateDataset(authToken,getsource,updateset,newpoints,function(status,data){
 	console.log('data',data);
 });
+*/
 /*
 gFit.getDataset(authToken,getsource,updateset,function(status,data){
 	console.log('data',data);
 });
 */
+/*
+var endDate = new Date(1396713600000);
+var startDate = new Date(endDate.setHours(endDate.getHours()-1));
+startDate.toJSON();
+endDate = endDate.toJSON();
+gFit.listExistingSessions(authToken,startDate,endDate,function(status,data){
+	console.log('data',data);
+});
+*/
+var newsessionid = "someSessionId";
+var newsession = {
+  "id": newsessionid,
+  "name": "My example workout",
+  "description": "A very intense workout",
+  "startTimeMillis": 1396710000000,
+  "endTimeMillis": 1396713600000,
+  "version": 1,
+  "lastModifiedToken": "exampleToken",
+  "application": {
+    "detailsUrl": "http://example.com",
+    "name": "Foo Example App",
+    "version": "1.0"
+  },
+  "activityType": 1
+};
+/*
+gFit.insertSession(authToken,newsessionid,newsession,function(status,data){
+	console.log('data',data);
+});
+*/
+/*
+gFit.getSession(authToken,newsessionid,function(status,data){
+	console.log('data',data);
+});
+*/
+gFit.deleteSession(authToken,newsessionid,function(status,data){
+	console.log('data',data);
+});
