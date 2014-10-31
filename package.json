@@ -1,6 +1,6 @@
 {
   "name": "node-google-fit",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "nodejs google fit api",
   "main": "index.js",
   "scripts": {
